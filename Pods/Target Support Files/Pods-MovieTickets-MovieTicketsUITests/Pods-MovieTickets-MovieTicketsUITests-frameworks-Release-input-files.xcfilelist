@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-MovieTickets-MovieTicketsUITests/Pods-MovieTickets-MovieTicketsUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
