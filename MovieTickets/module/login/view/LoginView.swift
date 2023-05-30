@@ -2,8 +2,7 @@
 //  LoginView.swift
 //  Bookshop
 //
-//  Created by chris on 2023/5/11.
-//
+//  
 
 import UIKit
 

@@ -2,7 +2,7 @@
 //  CustomNavigationController.swift
 //  Bookshop
 //
-//  Created by Chris on 2023/5/20.
+//  
 //
 
 import Foundation

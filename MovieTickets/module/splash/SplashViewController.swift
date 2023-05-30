@@ -1,5 +1,5 @@
 //
-//  SignUpSuccessViewController.swift
+//  SplashViewController.swift
 //  MovieTickets
 //
 //
@@ -7,22 +7,25 @@
 
 import UIKit
 
-class SignUpSuccessViewController: UIViewController {
+class SplashViewController: UIViewController {
+
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var goBtn: UIButton!
     typealias loginCloser = () -> ()
-    @IBOutlet weak var descLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
+
     var showPage: loginCloser?
-    var desc:String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.descLabel.text = desc
-        self.nextButton?.layer.cornerRadius = 5
-        self.nextButton?.layer.masksToBounds = true
+        self.goBtn.layer.cornerRadius = 5
+        self.goBtn.layer.masksToBounds = true
+        let randomInt = Int.random(in: 1...16)
+        self.imgView.image = UIImage(named: "\(randomInt)")
+        // Do any additional setup after loading the view.
     }
 
-    @IBAction func next(_ sender: Any) {
+    @IBAction func goClick(_ sender: Any) {
         self.showPage!()
-        self.dismiss(animated: true)
     }
     
     /*

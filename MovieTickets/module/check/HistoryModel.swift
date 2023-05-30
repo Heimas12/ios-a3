@@ -2,8 +2,7 @@
 //  HistoryModel.swift
 //  MovieTickets
 //
-//  Created by Chris on 2023/5/27.
-//
+//  
 
 import Foundation
 struct HistoryModel {

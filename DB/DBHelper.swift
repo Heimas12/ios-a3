@@ -2,8 +2,6 @@
 //  DBHelper.swift
 //  Bookshop
 //
-//  Created by Chris on 2023/5/19.
-//
 
 import Foundation
 import FMDB
@@ -11,7 +9,7 @@ import FMDB
 class DBHelper {
     static let shared = DBHelper() // singleton pattern
     
-    let databaseFileName = "MovieTicketsDataBase.sqlite"
+    let databaseFileName = "MovieTicketsDataBase.sqlite" // database file name
     var pathToDatabase: String!
     var database: FMDatabase!
     
@@ -29,10 +27,10 @@ class DBHelper {
         if database.open() {
             if database.tableExists(tableName) {
                     // The table already exists, execute the corresponding logic
-                    print("表已存在")
+                    print("table already exists")
                 } else {
                     // The table does not exist, execute the table creation operation
-                    print("表不存在，执行建表操作")
+                    print("The table does not exist, execute the table creation operation")
                     // Code for table creation
                     if tableName == "history" {
                         let query = createHistoryTable()
@@ -41,7 +39,7 @@ class DBHelper {
                 }
             return true
         } else {
-            print("无法打开数据库连接")
+            print("Unable to open database connection")
             return false
         }
     }
@@ -49,9 +47,9 @@ class DBHelper {
     // create table
     func createTable(sqlQuery: String) {
         if executeUpdate(query: sqlQuery, withArguments: nil) {
-            print("表创建成功")
+            print("table created successfully")
         } else {
-            print("表创建失败")
+            print("table creation failed")
         }
     }
     
@@ -68,7 +66,7 @@ class DBHelper {
         database.close()
     }
     
-    // MARK: - 增删改查操作
+    // MARK: - CRUD operation
     
     func executeQuery(query: String) -> FMResultSet? {
         // Execute query
@@ -76,7 +74,7 @@ class DBHelper {
             let resultSet = try database.executeQuery(query, values: nil)
             return resultSet
         } catch {
-            print("查询失败：\(error.localizedDescription)")
+            print("Query failed：\(error.localizedDescription)")
             return nil
         }
     }
@@ -87,7 +85,7 @@ class DBHelper {
             try database.executeUpdate(query, values: arguments)
             return true
         } catch {
-            print("更新失败：\(error.localizedDescription)")
+            print("update failed：\(error.localizedDescription)")
             return false
         }
     }
@@ -112,9 +110,9 @@ class DBHelper {
             let arguments: [Any] = [movieInfo.title, movieInfo.imageName, timeslot.price, timeslot.date, timeslot.startTime, timeslot.endTime, getCurrentTime(), "\(randomInt)", row, num]
             
             if executeUpdate(query: query, withArguments: arguments) {
-                print("插入成功")
+                print("update failed")
             } else {
-                print("插入失败")
+                print("insert failed")
             }
             closeDatabase()
         }
@@ -163,12 +161,12 @@ class DBHelper {
                 let arguments: [Any] = [orderNum]
     
                 if executeUpdate(query: query, withArguments: arguments) {
-                    print("删除成功")
+                    print("successfully deleted")
                     closeDatabase()
                     return true
                 } else {
                     closeDatabase()
-                    print("删除失败")
+                    print("failed to delete")
                     return false
                 }
             }

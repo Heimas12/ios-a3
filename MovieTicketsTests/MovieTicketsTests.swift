@@ -2,8 +2,6 @@
 //  MovieTicketsTests.swift
 //  MovieTicketsTests
 //
-//  Created by Chris on 2023/5/26.
-//
 
 import XCTest
 @testable import MovieTickets

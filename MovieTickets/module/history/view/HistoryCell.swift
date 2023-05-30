@@ -2,7 +2,7 @@
 //  HistoryBookCell.swift
 //  Bookshop
 //
-//  Created by Chris on 2023/5/25.
+//  
 //
 
 import UIKit

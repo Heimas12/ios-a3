@@ -2,7 +2,7 @@
 //  MovieTicketsUITestsLaunchTests.swift
 //  MovieTicketsUITests
 //
-//  Created by Chris on 2023/5/26.
+// 
 //
 
 import XCTest

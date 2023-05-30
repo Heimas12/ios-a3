@@ -2,7 +2,7 @@
 //  MovieCell.swift
 //  MovieTickets
 //
-//  Created by Chris on 2023/5/26.
+//
 //
 
 import Foundation
@@ -17,15 +17,15 @@ class MovieCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // 设置图片视图
+        // set image view
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
-        // 设置标题标签
+        // set title tag
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 13)
         
-        // 设置购买按钮
+        // Set up a buy button
         buyButton.setTitle("Buy", for: .normal)
         buyButton.setTitleColor(.white, for: .normal)
         buyButton.addTarget(self, action: #selector(buyButtonTapped), for: .touchUpInside)
@@ -34,7 +34,7 @@ class MovieCell: UICollectionViewCell {
         buyButton.layer.masksToBounds = true
         buyButton.isHidden = true
         buyButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        // 添加子视图
+        // add subview
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(buyButton)
@@ -65,7 +65,7 @@ class MovieCell: UICollectionViewCell {
     }
     
     @objc func buyButtonTapped() {
-        // 处理购买按钮点击事件
+        // Handle the buy button click event
     }
     
     func configure(with movie: MovieInfo) {

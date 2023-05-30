@@ -2,8 +2,7 @@
 //  HistoryViewController.swift
 //  Bookshop
 //
-//  Created by Chris on 2023/5/25.
-//
+//  
 
 import UIKit
 
@@ -30,9 +29,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadBooks()
     }
     
-    // 加载书籍信息
+    // Load book information
     func loadBooks() {
-        // TODO: 加载书籍信息
+        // TODO: Load booking information
         let dbHelper = DBHelper.shared
         self.historys = dbHelper.fetchHistoryData()
         self.tableView.reloadData()
@@ -81,7 +80,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "unsubscribe") { (action, view, completion) in
-            // 执行删除操作
+            // perform delete operation
             let hisory = self.historys[indexPath.row]
             let helper = DBHelper.shared
             if helper.deleteHistoryData(orderNum: hisory.orderNum) {
@@ -92,10 +91,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             completion(true)
         }
         
-        // 修改删除操作的背景颜色
+        // Modify the background color of the delete operation
         deleteAction.backgroundColor = .red
         
-        // 返回包含自定义删除操作的配置对象
+        // Returns a configuration object containing a custom delete action
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     }

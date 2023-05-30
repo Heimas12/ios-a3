@@ -2,7 +2,6 @@
 //  TimeSlotCell.swift
 //  MovieTickets
 //
-//  Created by Chris on 2023/5/26.
 //
 
 import Foundation
@@ -10,7 +9,7 @@ import Foundation
 import UIKit
 
 class TimeSlotCell: UITableViewCell {
-    // 声明各个 UI 元素
+    // Declare individual UI elements
     private let startTimeLabel = UILabel()
     private let endTimeLabel = UILabel()
     private let hallLabel = UILabel()
@@ -32,7 +31,7 @@ class TimeSlotCell: UITableViewCell {
     }
     
     private func setupViews() {
-        // 设置各个 UI 元素的属性
+        // Set properties for individual UI elements
         startTimeLabel.font = UIFont.systemFont(ofSize: 16)
         endTimeLabel.font = UIFont.systemFont(ofSize: 11)
         endTimeLabel.textColor = .gray
@@ -45,7 +44,7 @@ class TimeSlotCell: UITableViewCell {
         buyButton.setTitleColor(KlandPageBtn_normal_color, for: .normal)
         buyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         
-        // 将 UI 元素添加到 contentView 上
+        // Add UI elements to contentView
         contentView.addSubview(startTimeLabel)
         contentView.addSubview(endTimeLabel)
         contentView.addSubview(hallLabel)
@@ -55,8 +54,8 @@ class TimeSlotCell: UITableViewCell {
     }
     
     private func setupConstraints() {
-        // 设置 UI 元素的约束
-        // 这里使用 Masonry 布局库进行布局，你可以根据需要进行调整
+        // Set constraints for UI elements
+        // The Masonry layout library is used here for layout, you can adjust it as needed
         
         startTimeLabel.mas_makeConstraints { make in
             make?.top.equalTo()(self.contentView.mas_top)?.offset()(8)
@@ -104,7 +103,7 @@ class TimeSlotCell: UITableViewCell {
     }
     
     func configure(with timeSlot:TimeSlot) {
-        // 根据时间段对象设置 UI 元素的内容
+        // Sets the content of a UI element based on a time period object
         startTimeLabel.text = "\(timeSlot.startTime)"
         endTimeLabel.text = "\(timeSlot.endTime)ends"
         hallLabel.text = "\(timeSlot.hall) laser IMAX theater"

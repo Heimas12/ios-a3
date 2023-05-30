@@ -2,7 +2,7 @@
 //  SeatSelectionViewController.swift
 //  MovieTickets
 //
-//  Created by Chris on 2023/5/27.
+//
 //
 
 import Foundation
@@ -53,7 +53,7 @@ class SeatSelectionViewController: UIViewController {
 
 extension SeatSelectionViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2 // 两列，分别为座位排数和座位号
+        return 2 // Two columns, row number and seat number
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -88,7 +88,7 @@ extension SeatSelectionViewController: UIPickerViewDataSource, UIPickerViewDeleg
         let message = "You chose NO.\(number) in \(row) rows."
         let alertController = UIAlertController(title: "tips", message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "ok", style: .default){ action in
-            // 处理确定按钮点击事件
+            
             let vc = CheckViewController()
             vc.timeslot = self.timeslot
             vc.movieInfo = self.movieInfo

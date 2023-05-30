@@ -2,7 +2,7 @@
 //  TabBarController.swift
 //  Bookshop
 //
-//  Created by chris on 2023/5/12.
+// 
 //
 
 import UIKit
@@ -24,11 +24,16 @@ class TabBarController: UITabBarController {
         vc2.navigationItem.title = ""
         vc2.tabBarItem = UITabBarItem.init(title: "", image: UIImage.init(systemName: "heart"), tag: 1)
         
+        let vc3 = CustomNavigationController(rootViewController: AboutViewController())
+        vc3.view.backgroundColor = .white
+        vc3.navigationItem.title = ""
+        vc3.tabBarItem = UITabBarItem.init(title: "", image: UIImage.init(systemName: "person"), tag: 2)
+        
         
         self.tabBar.isTranslucent = true
 
         // Add the view controllers to the tab bar controller
-        self.viewControllers = [vc1, vc2]
+        self.viewControllers = [vc1, vc2, vc3]
 
     }
     

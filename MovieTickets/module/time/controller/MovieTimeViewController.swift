@@ -2,14 +2,14 @@
 //  MovieTimeViewController.swift
 //  MovieTickets
 //
-//  Created by Chris on 2023/5/26.
+// 
 //
 
 import Foundation
 
 class MovieTimeViewController: UIViewController {
    
-    // 定义数据源
+    // Define data source
     var dates: [String] = []
     var timeSlots: [[TimeSlot]] = []
     
@@ -31,7 +31,7 @@ class MovieTimeViewController: UIViewController {
         setupTimeSlots()
     }
     
-    // 根据当前时间计算日期和时间段
+    // Calculate date and time period based on current time
     private func setupTimeSlots() {
         let today = Date()
         let dateFormatter = DateFormatter()
@@ -49,7 +49,7 @@ class MovieTimeViewController: UIViewController {
                 let startTime = Calendar.current.date(byAdding: .hour, value: j * 2, to: date)!
                 let endTime = Calendar.current.date(byAdding: .hour, value: (j * 2) + 2, to: date)!
                 
-                // 屏蔽已过去的时间段
+                // Block elapsed time period
                 if startTime > currentTime {
                     let timeSlot = TimeSlot(date: dateString,
                         startTime: formatTime(startTime),
@@ -65,7 +65,7 @@ class MovieTimeViewController: UIViewController {
         }
     }
     
-    // 格式化时间
+    // format time
     private func formatTime(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"

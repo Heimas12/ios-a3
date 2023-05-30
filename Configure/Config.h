@@ -2,9 +2,7 @@
 //  Config.h
 //  Uninn
 //
-//  Created by nav on 2018/5/12.
-//  Copyright © 2018年 Chris.C. All rights reserved.
-//
+// 
 
 #ifndef Config_h
 #define Config_h

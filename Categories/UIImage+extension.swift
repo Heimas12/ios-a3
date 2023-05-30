@@ -2,13 +2,12 @@
 //  UIImage+extension.swift
 //  Uninn
 //
-//  Created by nav on 2018/5/15.
-//  Copyright © 2018年 Chris.C. All rights reserved.
-//
+
+
 
 import Foundation
 public extension UIImage {
-    public class func image(color:UIColor)-> UIImage{
+    class func image(color:UIColor)-> UIImage{
         let rect = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 59)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
         color.setFill()
@@ -19,7 +18,7 @@ public extension UIImage {
         return image
     }
     
-    public  class func imageUserToCompressForSizeImage(image:UIImage,size:CGSize) -> UIImage {
+    class func imageUserToCompressForSizeImage(image:UIImage,size:CGSize) -> UIImage {
         let newImage:UIImage!
         let originalSize = image.size
         let originalWidth = originalSize.width
@@ -43,7 +42,7 @@ public extension UIImage {
     }
     
     
-    public  class func scaleFixedSizeForImage(sourceImage:UIImage) -> UIImage {
+      class func scaleFixedSizeForImage(sourceImage:UIImage) -> UIImage {
         
         var width = sourceImage.size.width
         var height = sourceImage.size.height

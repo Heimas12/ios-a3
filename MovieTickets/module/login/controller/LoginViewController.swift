@@ -2,7 +2,6 @@
 //  LoginViewController.swift
 //  Bookshop
 //
-//  Created by chris on 2023/5/11.
 //
 
 import UIKit
@@ -11,9 +10,9 @@ import UIKit
 private let LoginCellId = "LoginCellId"
 class LoginViewController: BaseViewController, UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate  {
     
-    //声明闭包
+    //Declaring closures
     typealias loginCloser = () -> ()
-    //定义个变量 类型就是上面声明的闭包
+    //Define a variable type that is the closure declared above
     var showPage: loginCloser?
     private var subView:LoginView?
     private var isUsernameValid:Bool? = false

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MovieTickets
 //
-//  Created by Chris on 2023/5/26.
+// 
 //
 
 import UIKit
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             LoginSingleton.shareInstance.token = token as? String
             self.showMain()
         } else {
-            self.showLogin()
+            self.showSplash()
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: logOutNotification, object: nil)
@@ -41,6 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Handle notification events
 //        UserDefaults.standard.set(nil, forKey: "token")
         self.showLogin()
+    }
+    
+    func showSplash() -> Void {
+        let vc = SplashViewController()
+        vc.showPage = {() -> () in
+            self.showLogin()
+        }
+        self.window?.rootViewController = UINavigationController.init(rootViewController: vc)
     }
     
     func showLogin() -> Void {
@@ -60,22 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UserDefaults.standard.set(nil, forKey: "token")
 //    }
     
-//    func loadData() {
-//        let dbHelper = DBHelper.shared
-//        let names = ["识字大王", "幼儿睡前故事绘本","十万个为什么", "立体书","早教启蒙手指点读机", "幼儿启蒙教材","阳光宝贝", "小小科学家"]
-//        for name in names {
-//            let randomInt = Int.random(in: 1...10000)
-//            var author = "安徒生\(randomInt)"
-//            dbHelper.insertData(tableName: "book", name: name, category: "童书", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "幼儿启蒙", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "教育考试", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "考试", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "文学小说", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "文学", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "人文社科", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "历史", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "科技IT", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "医学", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "经管励志", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "励志成功", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "艺术", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "音乐", categoryImageName: "child")
-//            dbHelper.insertData(tableName: "book", name: name, category: "生活", imageName: "child", price: 16.8, author: author, desc: "智能儿童点读笔套装全科启蒙67册套装儿童故事机礼物",  secCategory: "健身保健", categoryImageName: "child")
-//        }
-//    }
 
 
 //    // MARK: UISceneSession Lifecycle

@@ -2,16 +2,16 @@
 //  RegisterViewController.swift
 //  Bookshop
 //
-//  Created by chris on 2023/5/11.
+//
 //
 
 import UIKit
 private let LoginCellId = "LoginCellId"
 class RegisterViewController: BaseViewController, UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate  {
 
-    //声明闭包
+    //Declaring closures
     typealias loginCloser = () -> ()
-    //定义个变量 类型就是上面声明的闭包
+    //Define a variable type that is the closure declared above
     var showPage: loginCloser?
     private var subView:LoginView?
     private var isUsernameValid:Bool? = false
@@ -301,16 +301,17 @@ class RegisterViewController: BaseViewController, UITableViewDelegate,UITableVie
     @objc func login() {
         self.view.endEditing(true)
        
-        //token持久化
+        //token persistence
         if let string1 = self.userNameTextField?.text , let string2 = self.pwdTextField?.text {
             let tokenString = string1 + string2
             UserDefaults.standard.set(tokenString.md5, forKey: "token")
             UserDefaults.standard.synchronize()
-            let helper = DBHelper.shared
+//            let helper = DBHelper.shared
 //            helper.insertUserData(token: tokenString.md5, name: self.nameTextField?.text ?? "", stuNum: self.birthTextField?.text ?? "", email: self.emailTextField?.text ?? "", phoneNum: self.phoneNumTextField?.text ?? "")
+            cacheUserInfo()
             SVProgressHUD.showSuccess(withStatus: "Sign Up success")
             
-            // 返回登录
+            // back login
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self.showSuccessPage()
             }
@@ -319,6 +320,17 @@ class RegisterViewController: BaseViewController, UITableViewDelegate,UITableVie
             SVProgressHUD.showError(withStatus: "Sign Up failed")
         }
         
+    }
+    
+    func cacheUserInfo()  {
+        var info:[String:String] = [:]
+        info["username"] = self.userNameTextField?.text
+        info["birthday"] = self.birthTextField?.text
+        info["email"] = self.emailTextField?.text
+        info["phone"] = self.phoneNumTextField?.text
+        UserDefaults.standard.set(info, forKey: "userInfo")
+        UserDefaults.standard.synchronize()
+
     }
     
     func showSuccessPage() {

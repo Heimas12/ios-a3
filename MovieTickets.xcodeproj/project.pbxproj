@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29AA0BBA2C627D1261ECFE90 /* Pods_MovieTickets_MovieTicketsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4673F90D1629C3993929451 /* Pods_MovieTickets_MovieTicketsUITests.framework */; };
+		830EB5DA2A232F1C00EA1212 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EB5D82A232F1C00EA1212 /* SplashViewController.swift */; };
+		830EB5DB2A232F1C00EA1212 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830EB5D92A232F1C00EA1212 /* SplashViewController.xib */; };
+		830EB5E12A23328100EA1212 /* AboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EB5DE2A23328100EA1212 /* AboutTableViewCell.swift */; };
+		830EB5E22A23328100EA1212 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EB5DF2A23328100EA1212 /* AboutViewController.swift */; };
 		833849E52A20459A004970CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833849E42A20459A004970CC /* AppDelegate.swift */; };
 		833849E92A20459A004970CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833849E82A20459A004970CC /* ViewController.swift */; };
 		833849EC2A20459A004970CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833849EA2A20459A004970CC /* Main.storyboard */; };
@@ -78,6 +82,10 @@
 		58A2BC8DD09C00CFC6BC9361 /* Pods-MovieTickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTickets.debug.xcconfig"; path = "Target Support Files/Pods-MovieTickets/Pods-MovieTickets.debug.xcconfig"; sourceTree = "<group>"; };
 		6A71564F068B2AC8D1F34610 /* Pods-MovieTicketsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTicketsTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieTicketsTests/Pods-MovieTicketsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7989D7D6FEAD1BC2B3196305 /* Pods-MovieTickets-MovieTicketsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTickets-MovieTicketsUITests.debug.xcconfig"; path = "Target Support Files/Pods-MovieTickets-MovieTicketsUITests/Pods-MovieTickets-MovieTicketsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		830EB5D82A232F1C00EA1212 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		830EB5D92A232F1C00EA1212 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		830EB5DE2A23328100EA1212 /* AboutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewCell.swift; sourceTree = "<group>"; };
+		830EB5DF2A23328100EA1212 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		833849E12A20459A004970CC /* MovieTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		833849E42A20459A004970CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		833849E82A20459A004970CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +169,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		830EB5D72A232F0700EA1212 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				830EB5D82A232F1C00EA1212 /* SplashViewController.swift */,
+				830EB5D92A232F1C00EA1212 /* SplashViewController.xib */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		830EB5DC2A23328100EA1212 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				830EB5DE2A23328100EA1212 /* AboutTableViewCell.swift */,
+				830EB5DF2A23328100EA1212 /* AboutViewController.swift */,
+			);
+			path = about;
+			sourceTree = "<group>";
+		};
 		833849D82A20459A004970CC = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +248,8 @@
 		83384A152A2046B4004970CC /* module */ = {
 			isa = PBXGroup;
 			children = (
+				830EB5DC2A23328100EA1212 /* about */,
+				830EB5D72A232F0700EA1212 /* splash */,
 				83384A6A2A224257004970CC /* check */,
 				83384A622A222A45004970CC /* seat */,
 				83384A562A20B4D8004970CC /* time */,
@@ -593,6 +621,7 @@
 				833849F12A20459D004970CC /* LaunchScreen.storyboard in Resources */,
 				83384A6E2A224285004970CC /* CheckViewController.xib in Resources */,
 				833849EE2A20459D004970CC /* Assets.xcassets in Resources */,
+				830EB5DB2A232F1C00EA1212 /* SplashViewController.xib in Resources */,
 				83384A412A205827004970CC /* SignUpSuccessViewController.xib in Resources */,
 				833849EC2A20459A004970CC /* Main.storyboard in Resources */,
 				83A177C92A225C010017D3D5 /* HistoryViewController.xib in Resources */,
@@ -723,6 +752,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830EB5E12A23328100EA1212 /* AboutTableViewCell.swift in Sources */,
 				83384A2D2A20478E004970CC /* API.swift in Sources */,
 				83384A382A2047ED004970CC /* LoginSingleton.swift in Sources */,
 				83384A672A222A72004970CC /* Seat.swift in Sources */,
@@ -742,12 +772,14 @@
 				83384A282A20478E004970CC /* String+extension.swift in Sources */,
 				83384A722A224C8E004970CC /* HistoryModel.swift in Sources */,
 				83384A2C2A20478E004970CC /* Commen.swift in Sources */,
+				830EB5DA2A232F1C00EA1212 /* SplashViewController.swift in Sources */,
 				833849E52A20459A004970CC /* AppDelegate.swift in Sources */,
 				83384A532A208C87004970CC /* MovieCell.swift in Sources */,
 				83384A5D2A20B53D004970CC /* MovieTimeViewController+extension.swift in Sources */,
 				83384A4B2A208ADA004970CC /* MoviesViewController.swift in Sources */,
 				83384A3A2A2047ED004970CC /* LoginViewController.swift in Sources */,
 				83384A3B2A2047ED004970CC /* RegisterViewController.swift in Sources */,
+				830EB5E22A23328100EA1212 /* AboutViewController.swift in Sources */,
 				83384A262A20478E004970CC /* UIBarButtonItem+ extension.swift in Sources */,
 				83384A512A208C59004970CC /* MoviesViewController+extension.swift in Sources */,
 				83384A402A205827004970CC /* SignUpSuccessViewController.swift in Sources */,
